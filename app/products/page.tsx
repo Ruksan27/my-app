@@ -11,9 +11,12 @@ export default function page() {
                     <Link key={product.id} href={`/products/${product.id}`} className="block mb-2">
                     <div key={product.id} className="mb-2">
                         <h2 className="text-xl font-semibold">{product.name}</h2>
-                        <p className="text-gray-600">{product.description}</p>
-                        <p className="text-gray-800 font-bold">Price: ${product.price}</p>
+                        <p className="text-gray-600 ">{product.description}</p>
+                        <p className="text-gray-800 font-bold padding-9px">Price: ${product.price}</p>
+                        <hr className="my-4" />
+
                     </div>
+
                     </Link>
                 ))}
             </ul>
