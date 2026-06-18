@@ -1,11 +1,10 @@
-export default function iii() {
+export default function NotFound() { 
     return (
         <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-            <h1 className="text-3xl font-bold mb-4">About Us</h1>
+            <h1 className="text-3xl font-bold mb-4">hello loading </h1>
             <p className="text-lg text-gray-600 dark:text-slate-300">
-                Welcome to our company! We are a team of passionate developers dedicated to creating amazing web applications.
+            trying to create a error page
             </p>
         </div>
     ); 
-} 
- 
+}
