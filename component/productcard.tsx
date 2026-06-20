@@ -1,6 +1,5 @@
 import Image from "next/image";
-export default async function ProductsNew({ data}: { data: Product }) {
-function ProductCard({ data }: { data: Product }) {
+export default function ProductCard({ data }: { data: Product}) {
   return (
     <><div className="border rounded-lg p-4 shadow">
           <Image
@@ -20,5 +19,4 @@ function ProductCard({ data }: { data: Product }) {
               </div>
           </div></>
   );
-}
 }
