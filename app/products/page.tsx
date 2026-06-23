@@ -1,4 +1,4 @@
-import products from "@/lib/data";
+import products from "@/app/data/fakestore";
 import Link from "next/link";
 
 export default function Page() {
@@ -18,7 +18,7 @@ export default function Page() {
             >
               <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-500">
                 <h2 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600">
-                  {product.name}
+                  {product.title}
                 </h2>
 
                 <p className="text-gray-600 mb-4 line-clamp-3">

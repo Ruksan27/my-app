@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Product } from "@/types/type.product";
 export default function ProductCard({ data }: { data: Product}) {
   return (
     <><div className="border rounded-lg p-4 shadow">

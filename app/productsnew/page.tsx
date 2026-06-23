@@ -1,27 +1,9 @@
 import ProductCard from "@/component/productcard";
+import { Product } from "@/types/type.product";
+import products from "@/app/data/fakestore";
 
-export default async function ProductsNew() {
-  let data: Product[] = [];
-
-  try {
-    const res = await fetch("https://fakestoreapi.com/products", {
-      cache: "no-store",
-    });
-
-    if (!res.ok) throw new Error("Failed to fetch");
-
-    data = (await res.json()) as Product[];
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    return (
-      <div className="flex items-center justify-center h-64">
-        <p className="text-red-500 text-lg">
-          please try again
-        </p>
-      </div>
-    );
-  }
-
+export default function ProductsNew() {
+  const data: Product[] = products as Product[];
   if (!data.length) {
     return (
       <div className="flex items-center justify-center h-64">

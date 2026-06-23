@@ -1,0 +1,16 @@
+export default async function ProductsPage() {
+  const datas: TypeProducts[] | null = await getFakeStoreData("/products");
+
+console.log(datas)
+  if (!datas || !datas.length) return notFound();
+
+  return (
+    <div>
+      <h1>Product page</h1>
+
+      {datas.map((data) => (
+        <ProcuctCard key={data.id} data={data} />
+      ))}
+    </div>
+  );
+}
