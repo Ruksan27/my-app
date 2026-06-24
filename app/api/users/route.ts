@@ -1,20 +1,16 @@
-import { cookies } from "next/headers";
-import { NextRequest } from "next/server";
+import { db } from "@/app/db";
+import { NextResponse } from "next/server";
 
-export async function GET (req: NextRequest){
-    const cookie_get = req.cookies.get("hello")
-    const cookie = await cookies()
-    cookie.set("hello","ruksan")
-    return Response.json({message: "hello world"});
+export async function POST(req: Request) {
+    console.log("user hit")
+    const data = await req.json();
+    console.log(data);
+    const [rows] = await db.query("INSERT INTO users (name,email,password) VALUES (?,?,?)", [
+        data.name,
+        data.email,
+        data.password
+    ])
 
+    return NextResponse.json({ data })
 }
 
-
-export async function POST() {
-  return Response.json(
-    {"goodbye": "world"},
-    {
-         status: 200,
-    },
-);
-}
